@@ -314,6 +314,12 @@
       --tw-shadow-color: color-mix(in oklab, #5C4A2A var(--tw-shadow-alpha), transparent);
     }
   }
+  .shadow-\[\#7e7971\] {
+    --tw-shadow-color: #7e7971;
+    @supports (color: color-mix(in lab, red, red)) {
+      --tw-shadow-color: color-mix(in oklab, #7e7971 var(--tw-shadow-alpha), transparent);
+    }
+  }
   .shadow-\[\#342a18\] {
     --tw-shadow-color: #342a18;
     @supports (color: color-mix(in lab, red, red)) {
@@ -330,6 +336,12 @@
     --tw-shadow-color: #313030;
     @supports (color: color-mix(in lab, red, red)) {
       --tw-shadow-color: color-mix(in oklab, #313030 var(--tw-shadow-alpha), transparent);
+    }
+  }
+  .shadow-\[\#F5F0E8\] {
+    --tw-shadow-color: #F5F0E8;
+    @supports (color: color-mix(in lab, red, red)) {
+      --tw-shadow-color: color-mix(in oklab, #F5F0E8 var(--tw-shadow-alpha), transparent);
     }
   }
   .shadow-\[\#ffffff\] {
