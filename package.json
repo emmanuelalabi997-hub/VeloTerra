@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "@tailwindcss/cli": "^4.2.4",
+    "tailwindcss": "^4.2.4"
+  },
+  "name": "veloterra",
+  "version": "1.0.0",
+  "description": "VeloTerra is a high performance social commerce platform designed for the modern marketplace. Built on a foundation of relativity and speed, it bridges the gap between local vendors and conscious consumers. By combining an earthy, grounded aesthetic  with lightning-fast user experience.",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emmanuelalabi997-hub/VeloTerra.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/emmanuelalabi997-hub/VeloTerra/issues"
+  },
+  "homepage": "https://github.com/emmanuelalabi997-hub/VeloTerra#readme"
+}
