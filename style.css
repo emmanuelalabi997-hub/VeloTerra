@@ -1,0 +1,816 @@
+ /* ── LIGHT THEME PALETTE ─────────────────────────────────────── */
+      
+ [data-theme="light"] {
+        --bg: #f5f5f0;
+        --bg-card: #ffffff;
+        --bg-card-2: #f9f9f6;
+        --bg-nav: #ffffff;
+        --bg-team: #ffffff;
+        --border: #e8e8e2;
+        --text: #1a1a1a;
+        --text-2: #555550;
+        --text-muted: #999990;
+        --green: #2d7a2d;
+        --green-light: #e8f5e8;
+        --green-btn: #2d7a2d;
+        --green-btn-t: #ffffff;
+        --price: #2d7a2d;
+        --hero-text: #1a1a1a;
+        --hero-sub: #444;
+        --input-bg: #ffffff;
+        --input-border: #d0d0c8;
+        --dot-active: #2d7a2d;
+        --dot: #ccc;
+        --shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+        --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.06);
+        --star-empty: #ddd;
+        --star-filled: #f4a400;
+        --footer-bg: #ffffff;
+        --footer-border: #e8e8e2;
+        --contact-btn: #ffffff;
+        --contact-brd: #d0d0c8;
+        --mission-bg: #3d5a2a;
+        --mission-text: #ffffff;
+      }
+
+      /* ── DARK THEME PALETTE ──────────────────────────────────────── */
+      [data-theme="dark"] {
+        --bg: #111111;
+        --bg-card: #1c1c1c;
+        --bg-card-2: #1c1c1c;
+        --bg-nav: #111111;
+        --bg-team: #f0f0ea;
+        /* team section stays light in dark mode */
+        --border: #2e2e2e;
+        --text: #f0f0ea;
+        --text-2: #aaa;
+        --text-muted: #666;
+        --green: #4caf50;
+        --green-light: #1a2e1a;
+        --green-btn: #2d7a2d;
+        --green-btn-t: #ffffff;
+        --price: #4caf50;
+        --hero-text: #f0f0ea;
+        --hero-sub: #ccc;
+        --input-bg: #1c1c1c;
+        --input-border: #333;
+        --dot-active: #4caf50;
+        --dot: #444;
+        --shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+        --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.4);
+        --star-empty: #444;
+        --star-filled: #f4a400;
+        --footer-bg: #111111;
+        --footer-border: #2e2e2e;
+        --contact-btn: #1c1c1c;
+        --contact-brd: #333;
+        --mission-bg: #2d5a1a;
+        --mission-text: #ffffff;
+      }
+
+      /* ================================================================
+   RESET & BASE
+================================================================ */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        font-size: 16px;
+      }
+
+      body {
+        font-family: 'Nunito', sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        /* smooth theme transition — all colour changes animate */
+        transition: background 0.3s ease, color 0.3s ease;
+        max-width: 430px;
+        /* phone frame on desktop */
+        margin: 0 auto;
+        min-height: 100vh;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      /* ================================================================
+   NAV BAR
+================================================================ */
+      .navbar {
+        background: var(--bg-nav);
+        border-bottom: 1px solid var(--border);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        transition: background 0.3s ease, border-color 0.3s ease;
+      }
+
+      .navbar-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 16px;
+        height: 54px;
+      }
+
+      /* Hamburger icon */
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 4px;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: var(--text);
+        border-radius: 2px;
+        transition: background 0.3s;
+      }
+
+      /* Logo */
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: var(--text);
+      }
+
+      .logo-leaf {
+        font-size: 1.3rem;
+      }
+
+      .logo span {
+        color: var(--green);
+      }
+
+      /* Right nav icons */
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      /* Theme toggle — the sun/moon switch */
+      .theme-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.15rem;
+        padding: 2px;
+        transition: transform 0.3s ease;
+        line-height: 1;
+      }
+
+      .theme-toggle:hover {
+        transform: rotate(20deg);
+      }
+
+      .nav-icon {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 1.1rem;
+        color: var(--text);
+        padding: 2px;
+        position: relative;
+      }
+
+      /* Cart badge */
+      .cart-badge {
+        position: relative;
+        display: inline-block;
+      }
+
+      .badge {
+        position: absolute;
+        top: -6px;
+        right: -8px;
+        background: var(--green);
+        color: white;
+        font-size: 0.6rem;
+        font-weight: 800;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* ================================================================
+   HERO CAROUSEL
+================================================================ */
+      .hero {
+        position: relative;
+        height: 210px;
+        overflow: hidden;
+        background: #c8a87a;
+        margin: 0;
+      }
+
+      /* Each slide */
+      .slide {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.6s ease;
+        pointer-events: none;
+      }
+
+      .slide.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      /* Hero image takes left ~55% */
+      .slide-img {
+        width: 55%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+      }
+
+      /* Text sits on the right */
+      .slide-text {
+        flex: 1;
+        padding: 16px 14px 16px 10px;
+      }
+
+      .slide-text h2 {
+        font-family: 'Lora', serif;
+        font-size: 1.65rem;
+        font-weight: 600;
+        color: var(--hero-text);
+        line-height: 1.15;
+        margin-bottom: 8px;
+      }
+
+      .slide-text h2 span {
+        color: var(--green);
+      }
+
+      .slide-text p {
+        font-size: 0.78rem;
+        color: var(--hero-sub);
+        line-height: 1.4;
+        margin-bottom: 14px;
+      }
+
+      .shop-btn {
+        display: inline-block;
+        background: var(--green-btn);
+        color: white;
+        font-family: 'Nunito', sans-serif;
+        font-weight: 700;
+        font-size: 0.8rem;
+        padding: 9px 18px;
+        border-radius: 6px;
+        border: none;
+        cursor: pointer;
+        transition: opacity 0.2s;
+      }
+
+      .shop-btn:hover {
+        opacity: 0.88;
+      }
+
+      /* Prev/Next arrows */
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.85);
+        border: none;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        transition: background 0.2s;
+      }
+
+      .carousel-btn:hover {
+        background: white;
+      }
+
+      .carousel-btn.prev {
+        left: 8px;
+      }
+
+      .carousel-btn.next {
+        right: 8px;
+      }
+
+      /* Dot indicators */
+      .carousel-dots {
+        position: absolute;
+        bottom: 10px;
+        left: 55%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 5px;
+      }
+
+      .dot {
+        width: 20px;
+        height: 4px;
+        border-radius: 2px;
+        background: var(--dot);
+        transition: background 0.3s, width 0.3s;
+        cursor: pointer;
+      }
+
+      .dot.active {
+        background: var(--dot-active);
+        width: 28px;
+      }
+
+      /* ================================================================
+   SECTION HEADERS (category rows)
+================================================================ */
+      .section-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 16px 10px;
+      }
+
+      .section-title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.95rem;
+        font-weight: 800;
+      }
+
+      .section-icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: var(--green);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.85rem;
+      }
+
+      .view-more {
+        font-size: 0.78rem;
+        color: var(--green);
+        font-weight: 700;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+        border: none;
+        background: none;
+      }
+
+      /* ================================================================
+   PRODUCT ROWS (2 cards per row)
+================================================================ */
+      .product-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding: 0 16px 16px;
+      }
+
+      .product-card {
+        background: var(--bg-card);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: var(--shadow-card);
+        border: 1px solid var(--border);
+        transition: background 0.3s ease, border-color 0.3s ease;
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* Placeholder for demo images without real URLs */
+      .product-card .img-placeholder {
+        width: 100%;
+        height: 100px;
+        background: linear-gradient(135deg, #e8e0d0 0%, #d4c8b0 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+      }
+
+      .product-info {
+        padding: 8px 10px 10px;
+      }
+
+      .product-name {
+        font-size: 0.78rem;
+        font-weight: 700;
+        line-height: 1.3;
+        color: var(--text);
+        margin-bottom: 4px;
+      }
+
+      .product-price {
+        font-size: 0.82rem;
+        font-weight: 800;
+        color: var(--price);
+        margin-bottom: 5px;
+      }
+
+      /* Rating dots */
+      .rating-dots {
+        display: flex;
+        gap: 4px;
+      }
+
+      .rdot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--dot);
+      }
+
+      .rdot.filled {
+        background: var(--green);
+      }
+
+      /* ================================================================
+   SHOW MORE BUTTON
+================================================================ */
+      .show-more-wrap {
+        padding: 0 16px 20px;
+      }
+
+      .show-more-btn {
+        width: 100%;
+        border: 1.5px solid var(--green);
+        background: transparent;
+        color: var(--green);
+        font-family: 'Nunito', sans-serif;
+        font-weight: 700;
+        font-size: 0.88rem;
+        padding: 12px;
+        border-radius: 24px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        transition: background 0.2s, color 0.2s;
+      }
+
+      .show-more-btn:hover {
+        background: var(--green);
+        color: white;
+      }
+
+      /* ================================================================
+   TEAM SECTION
+   Note: stays on a light background even in dark mode (see --bg-team)
+================================================================ */
+      .team-section {
+        background: var(--bg-team);
+        margin: 0 0 0;
+        padding: 20px 16px 0;
+        transition: background 0.3s ease;
+      }
+
+      .team-title {
+        text-align: center;
+        font-size: 1.05rem;
+        font-weight: 800;
+        color: #1a1a1a;
+        /* always dark text — light bg stays in dark mode */
+        margin-bottom: 16px;
+      }
+
+      .team-title span {
+        color: var(--green);
+      }
+
+      .team-member {
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+        padding: 14px 0;
+        border-bottom: 1px solid #e8e8e2;
+      }
+
+      .team-member:last-child {
+        border-bottom: none;
+      }
+
+      /* ── DEMO DATA NOTE ─────────────────────────────────────────────
+   The team member images below use placeholder colours.
+   To use real photos: replace the .team-avatar background with
+   an <img> tag or background-image: url('your-photo.jpg')
+   Before pushing to git, swap these out and delete this comment.
+─────────────────────────────────────────────────────────────── */
+      .team-avatar {
+        width: 72px;
+        height: 72px;
+        border-radius: 8px;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+
+      /* Placeholder avatar if no image */
+      .team-avatar-placeholder {
+        width: 72px;
+        height: 72px;
+        border-radius: 8px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        background: linear-gradient(135deg, #d4e8d0, #b8d8b0);
+      }
+
+      .team-info {
+        flex: 1;
+      }
+
+      .team-name {
+        font-weight: 800;
+        font-size: 0.92rem;
+        color: #1a1a1a;
+        margin-bottom: 2px;
+      }
+
+      .team-role {
+        font-weight: 700;
+        font-size: 0.78rem;
+        color: var(--green);
+        margin-bottom: 5px;
+      }
+
+      .team-bio {
+        font-size: 0.75rem;
+        color: #555;
+        line-height: 1.45;
+      }
+
+      /* Mission banner inside team section */
+      .mission-banner {
+        background: var(--mission-bg);
+        color: var(--mission-text);
+        padding: 14px 16px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        line-height: 1.45;
+        text-align: center;
+        justify-content: center;
+        margin: 0 -16px;
+      }
+
+      /* ================================================================
+   CONTACT SECTION
+================================================================ */
+      .contact-section {
+        padding: 20px 16px 16px;
+      }
+
+      .section-label {
+        font-size: 0.88rem;
+        font-weight: 800;
+        margin-bottom: 12px;
+        color: var(--text);
+      }
+
+      .contact-btns {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .contact-btn {
+        background: var(--contact-btn);
+        border: 1.5px solid var(--contact-brd);
+        border-radius: 8px;
+        padding: 12px 8px;
+        cursor: pointer;
+        font-family: 'Nunito', sans-serif;
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--text);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        transition: background 0.2s, border-color 0.2s;
+      }
+
+      .contact-btn:hover {
+        border-color: var(--green);
+        color: var(--green);
+      }
+
+      /* ================================================================
+   REVIEW / FEEDBACK SECTION
+================================================================ */
+      .review-section {
+        padding: 16px 16px;
+        border-top: 1px solid var(--border);
+      }
+
+      .review-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+
+      .review-header .section-label {
+        margin-bottom: 0;
+      }
+
+      .review-divider {
+        flex: 1;
+        height: 1px;
+        background: var(--border);
+      }
+
+      /* Star rating — interactive */
+      .star-rating {
+        text-align: center;
+        margin-bottom: 12px;
+      }
+
+      .stars {
+        display: flex;
+        gap: 6px;
+        justify-content: center;
+        margin-bottom: 5px;
+      }
+
+      .star {
+        font-size: 1.4rem;
+        cursor: pointer;
+        color: var(--star-empty);
+        transition: color 0.15s, transform 0.15s;
+        user-select: none;
+      }
+
+      .star.active,
+      .star.hover {
+        color: var(--star-filled);
+      }
+
+      .star:hover {
+        transform: scale(1.15);
+      }
+
+      .star-hint {
+        font-size: 0.72rem;
+        color: var(--text-muted);
+      }
+
+      /* Feedback textarea */
+      .feedback-input {
+        width: 100%;
+        background: var(--input-bg);
+        border: 1px solid var(--input-border);
+        border-radius: 8px;
+        padding: 12px 14px;
+        font-family: 'Nunito', sans-serif;
+        font-size: 0.85rem;
+        color: var(--text);
+        resize: none;
+        outline: none;
+        transition: border-color 0.2s, background 0.3s;
+        min-height: 70px;
+        margin-bottom: 12px;
+      }
+
+      .feedback-input::placeholder {
+        color: var(--text-muted);
+      }
+
+      .feedback-input:focus {
+        border-color: var(--green);
+      }
+
+      .submit-btn {
+        width: 100%;
+        background: var(--green-btn);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 14px;
+        font-family: 'Nunito', sans-serif;
+        font-weight: 800;
+        font-size: 0.9rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        transition: opacity 0.2s, transform 0.1s;
+      }
+
+      .submit-btn:hover {
+        opacity: 0.9;
+      }
+
+      .submit-btn:active {
+        transform: scale(0.98);
+      }
+
+      /* ================================================================
+   BOTTOM NAV
+================================================================ */
+      .bottom-nav {
+        background: var(--bg-nav);
+        border-top: 1px solid var(--border);
+        position: sticky;
+        bottom: 0;
+        z-index: 100;
+        transition: background 0.3s ease, border-color 0.3s ease;
+      }
+
+      .bottom-nav-inner {
+        display: flex;
+        justify-content: space-around;
+        padding: 8px 0 12px;
+      }
+
+      .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+        cursor: pointer;
+        padding: 4px 12px;
+        border-radius: 8px;
+        transition: background 0.15s;
+        border: none;
+        background: none;
+      }
+
+      .nav-item:hover {
+        background: var(--green-light);
+      }
+
+      .nav-item-icon {
+        font-size: 1.15rem;
+      }
+
+      .nav-item-label {
+        font-size: 0.65rem;
+        font-weight: 700;
+        color: var(--text-muted);
+      }
+
+      .nav-item.active .nav-item-label {
+        color: var(--green);
+      }
+
+      .nav-item.active .nav-item-icon {
+        filter: none;
+      }
+
+      /* ================================================================
+   UTILITY
+================================================================ */
+      .divider {
+        height: 8px;
+        background: var(--bg);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+
+      /* Subtle separator between category sections */
+      .cat-divider {
+        height: 1px;
+        background: var(--border);
+        margin: 0 16px;
+      }
+      @media  (max-width: 360px) {
+          img { width: 75px;}
+        };
+      
