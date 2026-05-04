@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>VeloTerra</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Lora:ital,wght@0,500;0,600;1,500&display=swap"
+            rel="stylesheet" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <nav class="navbar">
+            <div class="navbar-inner">
+                <!-- Hamburger -->
+                <div class="hamburger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </div>
+
+                <!-- Logo -->
+                <div class="logo">
+                    <span class="logo-leaf">🌿</span>
+                    Velo<span>Terra</span>
+                </div>
+
+                <!-- Right side icons -->
+                <div class="nav-right">
+                    <!-- Theme toggle button — JS listens to this -->
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle light/dark">
+                        🌙
+                    </button>
+                    <button class="nav-icon" aria-label="Search">🔍</button>
+                    <button class="nav-icon cart-badge" aria-label="Cart">
+                        🛒
+                        <span class="badge">2</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- ================================================================
+     HERO CAROUSEL
+     ── DEMO DATA ──
+     2 slides with placeholder images. Remove/replace before git push.
+================================================================ -->
+        <section class="hero" aria-label="Featured banner">
+
+            <!-- Slide 1 — DEMO -->
+            <div class="slide active">
+                <!-- 
+      DEMO IMAGE: Replace src with your real image.
+      Recommended size: 400x420px, portrait orientation.
+    -->
+                <img class="slide-img" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80"
+                    alt="Chef with bread" />
+                <div class="slide-text">
+                    <h2>Eat <span>Locally</span></h2>
+                    <p>Explore food and items from vendors around you</p>
+                    <button class="shop-btn">Shop Now</button>
+                </div>
+            </div>
+
+            <!-- Slide 2 — DEMO -->
+            <div class="slide">
+                <!--
+      DEMO IMAGE: Replace src with your real image.
+    -->
+                <img class="slide-img" src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=400&q=80"
+                    alt="Fresh produce market" />
+                <div class="slide-text">
+                    <h2>Fresh <span>Picks</span></h2>
+                    <p>Farm-fresh products delivered straight to your door</p>
+                    <button class="shop-btn">Explore</button>
+                </div>
+            </div>
+
+            <!-- Carousel controls -->
+            <button class="carousel-btn prev" id="prevSlide" aria-label="Previous">‹</button>
+            <button class="carousel-btn next" id="nextSlide" aria-label="Next">›</button>
+
+            <!-- Dots -->
+            <div class="carousel-dots" id="carouselDots">
+                <div class="dot active" data-index="0"></div>
+                <div class="dot" data-index="1"></div>
+                <div class="dot" data-index="2"></div>
+                <div class="dot" data-index="3"></div>
+            </div>
+
+        </section>
+
+
+        <!-- ================================================================
+     PRODUCT CATEGORIES
+     ── DEMO DATA ──
+     Replace product names, prices, and image emojis with real data.
+     The structure repeats for each category — just duplicate the block.
+================================================================ -->
+
+        <!-- Local Eateries -->
+        <div class="section-header">
+            <div class="section-title">
+                <div class="section-icon">🍽</div>
+                Local Eateries
+            </div>
+            <button class="view-more">View More ›</button>
+        </div>
+
+        <div class="product-row">
+            <!-- DEMO product 1 — replace emoji and text -->
+            <!-- <div class="product-card">
+                <div class="img-placeholder">🥗</div>
+                <div class="product-info">
+                    <div class="product-name">Farm Fresh Salad Bowl</div>
+                    <div class="product-price">$12.49</div>
+                    <div class="rating-dots">
+                        <div class="rdot filled"></div>
+                        <div class="rdot filled"></div>
+                        <div class="rdot"></div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- DEMO product 2 -->
+            <!-- <div class="product-card">
+                <div class="img-placeholder">🍔</div>
+                <div class="product-info">
+                    <div class="product-name">Grass-Fed Beef Burger</div>
+                    <div class="product-price">$10.99</div>
+                    <div class="rating-dots">
+                        <div class="rdot filled"></div>
+                        <div class="rdot filled"></div>
+                        <div class="rdot"></div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+            <div class="cat-divider"></div>
+
+
+
+
+            <!-- Show More Categories -->
+            <div class="show-more-wrap">
+                <button class="show-more-btn">🌿 Show More Categories</button>
+            </div>
+
+
+            <!--
+     TEAM SECTION
+     ── DEMO DATA ──
+     3 team members. Replace names, roles, bios, and avatars.
+     To use real photos: change .team-avatar-placeholder to
+     <img class="team-avatar" src="your-photo.jpg" alt="Name" />
+ -->
+            <div class="team-section">
+                <h2 class="team-title">Meet Your <span>VeloTerra</span> Team 🌿</h2>
+
+
+
+                <!-- DEMO member 2 -->
+                <!-- <div class="team-member">
+                <div class="team-avatar-placeholder">👩</div>
+                <div class="team-info">
+                    <div class="team-name">Maria Gonzales</div>
+                    <div class="team-role">Backend Developer</div>
+                    <div class="team-bio">Focused on creating robust and scalable solutions that power local
+                        connections.</div>
+                </div>
+            </div> -->
+
+                <!-- DEMO member 3 -->
+
+
+                <!-- Mission banner -->
+                <div class="mission-banner">
+                    🌿 Driven by a shared passion for connecting communities and supporting local businesses.
+                </div>
+            </div>
+
+
+            <!--  CONTACT SECTION-->
+            <div class="contact-section">
+                <div class="section-label">Contact Us</div>
+                <div class="contact-btns">
+                    <button class="contact-btn">📞 Call Us</button>
+                    <button class="contact-btn">💬 Message Us</button>
+                </div>
+            </div>
+
+
+            <!-- 
+     REVIEW & FEEDBACK
+     This collects: star rating + text feedback -->
+            <div class="review-section">
+                <div class="review-header">
+                    <div class="section-label">Review & Feedback</div>
+                    <div class="review-divider"></div>
+                </div>
+
+                <!-- Interactive star rating -->
+                <div class="star-rating">
+                    <div class="stars" id="starRow" role="group" aria-label="Star rating">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <div class="star-hint" id="starHint">Tap to rate your experience</div>
+                </div>
+
+                <!-- Feedback text area -->
+                <textarea class="feedback-input" id="feedbackText" placeholder="Share your thoughts or complaints…"
+                    rows="3" aria-label="Feedback"></textarea>
+
+                <!-- Submit -->
+                <button class="submit-btn" id="submitFeedback">
+                    ✈ Submit Feedback
+                </button>
+            </div>
+
+            <!-- BOTTOM NAVIGATION -->
+
+            <nav class="bottom-nav" aria-label="Main navigation">
+                <div class="bottom-nav-inner">
+                    <button class="nav-item active">
+                        <span class="nav-item-icon">🏠</span>
+                        <span class="nav-item-label">Home</span>
+                    </button>
+                    <button class="nav-item">
+                        <span class="nav-item-icon">⊞</span>
+                        <span class="nav-item-label">Categories</span>
+                    </button>
+                    <button class="nav-item">
+                        <span class="nav-item-icon">🛍</span>
+                        <span class="nav-item-label">Orders</span>
+                    </button>
+                    <button class="nav-item">
+                        <span class="nav-item-icon">♡</span>
+                        <span class="nav-item-label">Favorites</span>
+                    </button>
+                    <button class="nav-item">
+                        <span class="nav-item-icon">👤</span>
+                        <span class="nav-item-label">Profile</span>
+                    </button>
+                </div>
+            </nav>
+            <script>
+                const themeToggleBtn = document.getElementById('themeToggle');
+                const htmlEl = document.documentElement;  /* the <html> tag */
+
+                /* Labels shown on the button for each theme */
+                const ICONS = { light: '🌙', dark: '☀️' };
+
+                /* On page load: restore saved theme preference */
+                const savedTheme = localStorage.getItem('veloterra-theme') || 'light';
+                applyTheme(savedTheme);
+
+                /* Button click: flip between light and dark */
+                themeToggleBtn.addEventListener('click', () => {
+                    const current = htmlEl.getAttribute('data-theme');
+                    const next = current === 'light' ? 'dark' : 'light';
+                    applyTheme(next);
+                    localStorage.setItem('veloterra-theme', next);   /* remember choice */
+                });
+
+                function applyTheme(theme) {
+                    htmlEl.setAttribute('data-theme', theme);
+                    themeToggleBtn.textContent = ICONS[theme];
+                }
+
+            </script>
+    </body>
+
+</html>
+>>>>>>> 5f56474 (homepage)
