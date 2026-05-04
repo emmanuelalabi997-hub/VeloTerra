@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer signup page</title>
+    <link rel="stylesheet" href="src/output.css">
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+</head>
+<body class=" flex flex-col justify-between">
+    <header>
+        <nav class="px-2 flex-row justify-evenly items-center  ">
+
+            <aside class=" flex flex-row justify-between items-center shadow-2xs shadow-gray-600">
+            <img src="src/media/image/logo.png" alt="" class="w-14 h-14">
+           <h1 class="text-3xl font-bold">
+              Velo 
+              <span class="text-[#3b9d1e]">Terra</span>
+           </h1>
+            </aside>
+
+        </nav>
+    </header>
+
+    <h1 class="text-center text-2xl font-bold text-[#5C4A2A] underline">Customer Signup</h1>
+
+     <section class=" w-full h-72">
+              <dotlottie-player
+                src="src/json/sale.json"
+                background="transparent"
+                speed="1"
+                loop
+                autoplay
+              ></dotlottie-player>
+     </section>
+
+     <main class=" w-full h-[450px] px-5 justify-around">
+
+        <form action="" class="flex flex-col justify-around items-center w-full h-[400px] ">
+            <input type="text" class=" border border-gray-500 px-2.5 w-72 h-10 rounded-xl" 
+            placeholder="Full name">
+
+             <input type="email" class=" border border-gray-500 px-2.5 w-72 h-10 rounded-xl" 
+            placeholder="Email">
+
+             <input type="text" class=" border border-gray-500 px-2.5 w-72 h-10 rounded-xl" 
+            placeholder="Phone number">
+
+            <input type="password" class=" border border-gray-500 px-2.5 w-72 h-10 rounded-xl" 
+            placeholder="Password">
+
+            <input type="password" class=" border border-gray-500 px-2.5 w-72 h-10 rounded-xl" 
+            placeholder="Confirm password">
+
+            <button class="p-2 w-60 fonse rounded-full shadow-2xl cursor-pointer  
+            active:shadow-none shadow-gray-800 bg-[#3b9d1e]">SignUp</button>
+
+            </form>
+            <section class="flex flex-col justify-around items-center w-full h-52">
+
+             <div class="w-full flex flex-row justify-between items-center">
+            <div class="bg-[#00000055] w-full h-[0.5px] flex items-center justify-center"></div>
+                <h3 class="w-[700px] text-center">Or signUp with google</h3>
+                <div class="bg-[#00000055] w-full h-[0.5px] flex items-center justify-center"></div>
+            </div>
+
+             <div class="bg-[#00000045] border border-[#b0b0b0] w-64 h-10 rounded-full
+            flex items-center justify-center active:w-48 cursor-pointer
+            ">
+                <h2 class="font-semibold cursor-pointer">Sign in with google</h2>
+            </div>
+
+            <h3>Already have an Account? <a href="customersignin.html" class="text-[#5C4A2A] font-semibold 
+                text-xl underline cursor-pointer">signIn</a></h3>
+
+            <div class="rounded-full w-72 h-12 bg-[#00000045] flex justify-around items-center">
+                <div class="rounded-full cursor-pointer w-32 h-10 bg-[#3b9d1e] flex items-center justify-center font-semibold text-xl"> Customer </div>
+                <a href="vendorsignup.html"><div class="rounded-full cursor-pointer w-32 h-10 active:bg-[#3b9d1e] flex items-center justify-center font-semibold text-xl"> Vendor </div></a>
+            </div>
+
+    </section>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot password</title>
+    <link rel="stylesheet" href="src/output.css">
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+</head>
+<body>
+     <header>
+        <nav class="px-2 flex-row justify-evenly items-center  ">
+
+            <aside class=" flex flex-row justify-between items-center shadow-2xs shadow-gray-600">
+            <img src="src/media/image/logo.png" alt="" class="w-14 h-14">
+           <h1 class="text-3xl font-bold">
+              Velo 
+              <span class="text-[#3b9d1e]">Terra</span>
+           </h1>
+            </aside>
+
+        </nav>
+    </header>
+
+     <section class=" w-full h-72">
+              <dotlottie-player
+                src="src/json/Forgot Password.json"
+                background="transparent"
+                speed="1"
+                loop
+                autoplay
+              ></dotlottie-player>
+     </section>
+     <h1 class="text-4xl font-bold text-center">Forgot password?</h1>
+     <h3 class="text-center">No worries! Enter your registered email 
+        address and we'll send you a link to reset your password.</h3>
+
+         <form action="" class="flex flex-col justify-around items-center w-full h-36 ">
+            <input type="email" class=" border border-gray-500 px-2.5 w-72 h-10 rounded-xl" 
+            placeholder="Email">
+
+            <button class="p-2 w-52 fonse rounded-full shadow-2xl cursor-pointer  
+            active:shadow-none shadow-gray-800 bg-[#3b9d1e] font-semibold
+            active:bg-[#131313] active:text-[#3b9d1e]">Send</button>
+            </form>
+        
+</body>
+</html>
